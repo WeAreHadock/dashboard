@@ -21,9 +21,11 @@ import {NotificationsService} from './notifications';
 import {Router} from '@angular/router';
 import {first} from 'rxjs/operators';
 
-@Injectable({
-    providedIn: 'root',
-})
+providers: [
+  ResourceService 
+]
+
+@Injectable()
 export class PermissionsService {
   private firstNs: string;
   private nsList: string[];
