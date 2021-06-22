@@ -21,10 +21,6 @@ import {NotificationsService} from './notifications';
 import {Router} from '@angular/router';
 import {first} from 'rxjs/operators';
 
-providers: [
-  ResourceService 
-]
-
 @Injectable()
 export class PermissionsService {
   private firstNs: string;
