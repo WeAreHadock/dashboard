@@ -15,8 +15,7 @@
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {Component, Inject, NgZone, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {ConfigService} from 'common/services/global/config';
-
+import {ConfigService} from '@common/services/global/config';
 import {AuthenticationMode, EnabledAuthenticationModes, LoginSkippableResponse, LoginSpec} from '@api/root.api';
 import {KdError} from '@api/root.shared';
 import {IConfig, KdFile, StateError} from '@api/root.ui';
@@ -26,7 +25,7 @@ import {HistoryService} from '@common/services/global/history';
 import {PluginsConfigService} from '@common/services/global/plugin';
 import {CookieService} from 'ngx-cookie-service';
 import {map} from 'rxjs/operators';
-import {PermissionsService} from 'common/services/global/permissions';
+import {PermissionsService} from '@common/services/global/permissions';
 import {CONFIG_DI_TOKEN} from '../index.config';
 
 enum LoginModes {
