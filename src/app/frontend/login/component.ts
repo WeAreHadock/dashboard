@@ -38,7 +38,7 @@ enum LoginModes {
   selector: 'kd-login',
   templateUrl: './template.html',
   styleUrls: ['./style.scss'],
-  providers: [ConfigService]
+  providers: [ConfigService, PermissionsService]
 })
 export class LoginComponent implements OnInit {
   loginModes = LoginModes;
