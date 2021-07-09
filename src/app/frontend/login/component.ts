@@ -18,16 +18,16 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {ConfigService} from 'common/services/global/config';
 
 import {AuthenticationMode, EnabledAuthenticationModes, LoginSkippableResponse, LoginSpec} from '@api/root.api';
-import {KdError, KdFile, StateError} from '@api/root.ui';
+import {KdError} from '@api/root.shared';
+import {IConfig, KdFile, StateError} from '@api/root.ui';
+import {AsKdError, K8SError} from '@common/errors/errors';
+import {AuthService} from '@common/services/global/authentication';
+import {HistoryService} from '@common/services/global/history';
+import {PluginsConfigService} from '@common/services/global/plugin';
 import {CookieService} from 'ngx-cookie-service';
 import {map} from 'rxjs/operators';
-import {HistoryService} from '../common/services/global/history';
-
-import {Config, CONFIG_DI_TOKEN} from '../index.config';
-import {AsKdError, K8SError} from '../common/errors/errors';
-import {AuthService} from '../common/services/global/authentication';
-import {PluginsConfigService} from '../common/services/global/plugin';
 import {PermissionsService} from 'common/services/global/permissions';
+import {CONFIG_DI_TOKEN} from '../index.config';
 
 enum LoginModes {
   Kubeconfig = 'kubeconfig',
@@ -66,7 +66,7 @@ export class LoginComponent implements OnInit {
     public config: ConfigService,
     public permission: PermissionsService,
     private readonly historyService_: HistoryService,
-    @Inject(CONFIG_DI_TOKEN) private readonly CONFIG: Config
+    @Inject(CONFIG_DI_TOKEN) private readonly CONFIG: IConfig
   ) {}
 
   ngOnInit(): void {
