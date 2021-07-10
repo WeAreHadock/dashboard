@@ -21,20 +21,22 @@ import {Animations} from '../../animations/animations';
   styleUrls: ['./style.scss'],
   animations: [Animations.expandInOut],
 })
+
 export class CardComponent {
   @Input() initialized = true;
-  @Input() role: string;
+  @Input() role: 'inner' | 'table' | 'inner-content';
   @Input() withFooter = false;
   @Input() withTitle = true;
   @Input() expandable = true;
-  @Input()
-  set titleClasses(val: string) {
-    this.classes_ = val.split(/\s+/);
-  }
   @Input() expanded = true;
   @Input() graphMode = false;
   @Input() color = 'white';
   private classes_: string[] = [];
+
+  @Input()
+  set titleClasses(val: string) {
+    this.classes_ = val.split(/\s+/);
+  }
 
   expand(): void {
     if (this.expandable) {
