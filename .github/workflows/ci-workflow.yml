@@ -140,7 +140,6 @@ jobs:
           rm -rf .tmp
           bash <(curl -s https://codecov.io/bash) -c -K || echo "Codecov upload failed"
 
-<<<<<<< HEAD
   # e2e:
   #   name: E2E Tests
   #   runs-on: ubuntu-latest
